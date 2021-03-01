@@ -15,11 +15,11 @@ int batteryIsOk(float temperature, float soc, float chargeRate)
     float  batterypara_max[] ={45,80,0.8};
     int i;
     int count = 3;
-   for(i=0;i<1;i++)
+   for(i=0;i<3;i++)
    {
   
-    //if((reading[i] < batterypara_min[i]) || ( reading [i] > batterypara_max[i]))
-       if((reading[i] < batterypara_min[i])) 
+    if((reading[i] < batterypara_min[i]) || ( reading [i] > batterypara_max[i]))
+       
     {
        printf(" %s is out of range!\n" ,batterypara[i]);
        count --;
