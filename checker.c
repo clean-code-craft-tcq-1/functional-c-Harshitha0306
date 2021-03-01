@@ -20,7 +20,7 @@ int batteryIsOk(float temperature, float soc, float chargeRate)
     float  batterypara_max[] ={45,80,0.8};
     int i;
     int count = 3;
-   for(i=0;i<3;i++)
+   for(i=0;i<0;i++)
    {
   
     if(reading[i] < batterypara_min[i])
@@ -28,7 +28,7 @@ int batteryIsOk(float temperature, float soc, float chargeRate)
        printf(" %s is low!\n" ,batterypara[i]);
         count--;
     }
-    if(reading[i] > batterypara_max[i])
+    else if(reading[i] > batterypara_max[i])
     {
         printf(" %s is high!\n" ,batterypara[i]);
         count--;
