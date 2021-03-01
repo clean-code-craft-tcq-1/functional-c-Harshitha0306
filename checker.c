@@ -1,7 +1,12 @@
 #include <stdio.h>
 #include <assert.h>
 
-
+/*struct par_temperature
+{
+   char name[20];
+   float min_temperature;
+   float max_temperature;
+}t = {"temperature",0,45};*/
 
 int batteryIsOk(float temperature, float soc, float chargeRate)
 {
@@ -18,15 +23,19 @@ int batteryIsOk(float temperature, float soc, float chargeRate)
    for(i=0;i<3;i++)
    {
   
-    if((reading[i] < batterypara_min[i]) || ( reading [i] > batterypara_max[i]))
-       
+    if(reading[i] < batterypara_min[i])
     {
-       printf(" %s is out of range!\n" ,batterypara[i]);
-       count --;
+       printf(" %s is low!\n" ,batterypara[i]);
+        count--;
     }
-       
-}
-   return((count < 3 )? 0 :1);
+    if(reading[i] > batterypara_max[i])
+    {
+        printf(" %s is high!\n" ,batterypara[i]);
+        count--;
+    }
+      
+    }
+    return((count < 3 )? 0 :1);
  }
 
 
