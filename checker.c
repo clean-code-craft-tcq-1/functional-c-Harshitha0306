@@ -1,12 +1,12 @@
-#include <stdio.h>
+/*#include <stdio.h>
 #include <assert.h>
 
-/*struct par_temperature
+struct par_temperature
 {
    char name[20];
    float min_temperature;
    float max_temperature;
-}t = {"temperature",0,45};*/
+}t = {"temperature",0,45};
 
 int batteryIsOk(float temperature, float soc, float chargeRate)
 {
@@ -32,7 +32,7 @@ int batteryIsOk(float temperature, float soc, float chargeRate)
     {
         printf(" %s is high!\n" ,batterypara[i]);
         count--;
-    }
+    } 
       
     }
     return((count < 3 )? 0 :1);
@@ -43,4 +43,4 @@ int main() {
 
  assert(batteryIsOk(45,70,0.7));
  assert(!batteryIsOk(50, 85, 0));
-}
+} */
