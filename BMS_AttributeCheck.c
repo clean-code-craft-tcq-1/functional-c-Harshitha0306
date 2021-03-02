@@ -32,7 +32,10 @@ int batteryIsOk(float temperature, float soc, float chargeRate)
     temperature_check = Check_Attributelow(temperature,s_temperature) +   Check_AttributeHigh(temperature,s_temperature);
     soc_check = Check_Attributelow(soc,s_soc) + Check_AttributeHigh(soc,s_soc);
     chargeRate_check = Check_AttributeHigh(chargeRate,s_chargeRate);
-    printf(" %d,%d %d",temperature_check,soc_check,chargeRate_check);
+    if((temperature_check + soc_check + chargeRate_check)==0)
+    {
+        printf("battery is ok");
+    }
     return!(temperature_check + soc_check + chargeRate_check);
    
 }
