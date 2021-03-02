@@ -44,5 +44,6 @@ assert(batteryIsOk(45,70,0.7));
 assert(!batteryIsOk(50, 70, 0.7));
 assert(!batteryIsOk(45, 85, 0.7));
 assert(!batteryIsOk(45, 30, 1));
+assert(!batteryIsOk(0, 10, 0));
 assert(!batteryIsOk(50, 85, 0.9));
 }
